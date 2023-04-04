@@ -6,3 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rand = "0.8.3"
+futures = "0.3.26"
+tokio = { version = "1", features = ["full"] }
+chrono = "0.4.23"
+
+# opt-level 设置控制 Rust 会对代码进行何种程度的优化。这个配置的值从 0 到 3。越高的优化级别需要更多的时间编译
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
